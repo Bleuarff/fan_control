@@ -1,11 +1,11 @@
 
-const int outPin1 = 9;
-const int outPin2 = 11;
+const int outPin1 = 3;
+const int outPin2 = 5;
 
 const int input1 = A5;
 const int input2 = A2;
 
-const int sleepTime = 5000; // 1 sec
+const int sleepTime = 5000; // 5 sec
 
 void setup()
 {
@@ -18,10 +18,8 @@ void setup()
 // get temperature
 float sense(int input, float offset)
 {
-  //ratio = 1;
   int baseVal = analogRead(input);
   float voltage = (baseVal / 1024.0) * 4.98;
-  //float temp = voltage * ratio;
   float temp = voltage * 100 - 273.15 + offset;
 
   Serial.print("Value: ");
@@ -62,7 +60,7 @@ void loop()
   int temp1 = sense(input1, 0.5);
   regulateFan(temp1, outPin1);
 
-  int temp2 = sense(input2, 3.4);
+  int temp2 = sense(input2, 2.9);
   regulateFan(temp2, outPin2);
 
   delay(sleepTime);
