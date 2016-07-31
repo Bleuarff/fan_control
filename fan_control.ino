@@ -1,6 +1,6 @@
 
-const int outPin1 = 3;
-const int outPin2 = 5;
+const int outPin1 = 5;
+const int outPin2 = 3;
 
 const int input1 = A5;
 const int input2 = A2;
@@ -65,4 +65,3 @@ void loop()
 
   delay(sleepTime);
 }
-
